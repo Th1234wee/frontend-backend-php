@@ -7,3 +7,9 @@ img{
     width: 60px;
     height: 60px;
 }
+form{
+    margin: 10px 0px !important;
+}
+label{
+    margin-top: 10px;
+}
