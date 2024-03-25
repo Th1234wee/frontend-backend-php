@@ -29,20 +29,9 @@
                 <th>Brand</th>
                 <th>Action</th>
             </tr>
-            <tr>
-                <td>1001</td>
-                <td>Samsung Galaxy Z Fold</td>
-                <td>
-                    <img src="../image/example-image.jpg" alt="">
-                </td>
-                <td>$999.00</td>
-                <td>Mobiles Phone</td>
-                <td>Samsung</td>
-                <td>
-                    <button class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></button>
-                    <button class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
-                </td>
-            </tr>
+            <?php
+                show_product();
+            ?>
         </table>
     </div>
     <?php 

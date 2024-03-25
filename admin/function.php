@@ -29,4 +29,30 @@
         }
     }
     add_product();
+    function show_product(){
+        global $connection;
+
+        $sql_show = "
+                        SELECT * FROM `accessories` WHERE 1 ORDER BY `id` DESC 
+                    ";  
+        $result   = $connection -> query($sql_show);
+        while($row = mysqli_fetch_assoc($result)){
+            echo '
+                <tr>
+                    <td>'.$row['id'].'</td>
+                    <td>'.$row['name'].'</td>
+                    <td>
+                        <img src="../image/'.$row['image'].'" alt="'.$row['image'].'">
+                    </td>
+                    <td>'.$row['price'].'</td>
+                    <td>'.$row['category'].'</td>
+                    <td>'.$row['brand'].'</td>
+                    <td>
+                        <button class="btn btn-outline-warning"><i class="fa-solid fa-pen-to-square"></i></button>
+                        <button class="btn btn-outline-danger"><i class="fa-solid fa-trash"></i></button>
+                    </td>
+                </tr>
+            ';
+        }
+    }
    
