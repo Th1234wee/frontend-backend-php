@@ -1,5 +1,5 @@
 <?php 
-    $connection = new mysqli('localhost','root','','php12-1',3308);
+    $connection = new mysqli('localhost', 'root', '', 'php12-1', 3308);
     function upload_file($image_name){
         $path      = '../image/'.$image_name;
         move_uploaded_file($_FILES['_file']['tmp_name'] , $path);
