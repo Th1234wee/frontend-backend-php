@@ -16,7 +16,7 @@
 <body>
     <div class="container p-4 border border-5 d-flex justify-content-between my-4">
         <h3>Accessories Store</h3>
-        <button class="btn btn-outline-primary"data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus"></i> Add Product</button>
+        <button id="open_add" class="btn btn-outline-primary"data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="fa-solid fa-plus"></i> Add Product</button>
     </div>
     <div class="container">
         <table class="table table-hover align-middle" style="table-layout: fixed;">
@@ -39,3 +39,30 @@
     ?>
 </body>
 </html>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(document).ready(function(){
+        $("#open_add").on("click",function(){
+            $("#accept_add").show();
+            $("#accept_edit").hide();
+        })
+        $("body").on("click","#open_edit",function(){
+            $("#accept_add").hide();
+            $("#accept_edit").show();
+
+            var id         =   $(this).parents('tr').find('td').eq(0).text();
+            var name       =   $(this).parents('tr').find('td').eq(1).text();
+            var image      =   $(this).parents('tr').find('td:eq(2) img').attr('alt');
+            var price      =   $(this).parents('tr').find('td').eq(3).text();
+            var category   =   $(this).parents('tr').find('td').eq(4).text();
+            var brand      =   $(this).parents('tr').find('td').eq(5).text();
+
+            $("#id").val(id);
+            $("#name").val(name);
+            $("#old_profile").val(image);
+            $("#price").val(price);
+            $("#category").val(category);
+            $("#brand").val(brand);
+        })
+    })
+</script>

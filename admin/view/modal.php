@@ -8,10 +8,12 @@
       </div>
       <div class="modal-body">
         <form method="post" enctype="multipart/form-data">
+          <input type="hidden" name="_id" id="id">
           <label for="name">Name</label>
           <input type="text" name="_name" id="name" class="form-control">
           <label for="name">Image</label>
           <input type="file" name="_file" id="file" class="form-control">
+          <input type="text" name="old_profile" id="old_profile">
           <label for="name">Price</label>
           <input type="text" name="_price" id="price" class="form-control">
           <label for="name">Category</label>
@@ -28,7 +30,8 @@
           </select>
           <div class="modal-footer">
             <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-            <button name="accept_add" type="submit" class="btn btn-success">Confirm Add</button>
+            <button id="accept_add" name="accept_add" type="submit" class="btn btn-success">Confirm Add</button>
+            <button id="accept_edit" name="accept_edit" type="submit" class="btn btn-warning">Edit</button>
           </div>
         </form>
       </div>
