@@ -7,6 +7,7 @@
     function add_product(){
         global $connection;         
 
+        
         if(isset($_POST['accept_add'])){
             $name           = $_POST['_name'];
             $image          = $_FILES['_file']['name'];
@@ -72,7 +73,7 @@
             }
             else{
                 $thumnail  = date('YmdHis') . '-' . $image;
-                upload_file($thumnail);
+                upload_file($thumnail);        
             }
             if(!empty($name) && !empty($price) && !empty($category) &&!empty($brand) ){
                 $sql_edit  =   "
@@ -90,5 +91,12 @@
 
         }
     }
+
+
+
+
+
+
+    
     edit_product();
    
